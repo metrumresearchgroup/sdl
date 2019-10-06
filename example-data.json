@@ -1,0 +1,19 @@
+[
+    {
+      "url": ["https://cran.rstudio.com/bin/macosx/el-capitan/contrib/3.5/abind_1.4-5.tgz", "https://metrumresearchgroup.github.io/cran/2019-09-22/bin/macosx/el-capitan/contrib/3.5/abind_1.4-5.tgz"],
+      "file_name": "bin/macosx/el-capitan/contrib/3.5/abind_1.4-5.tgz"
+    },
+    {
+      "url": ["https://cran.rstudio.com/bin/macosx/el-capitan/contrib/3.5/alphashape3d_1.3.tgz", "https://metrumresearchgroup.github.io/cran/2019-09-22/bin/macosx/el-capitan/contrib/3.5/alphashape3d_1.3.tgz"],
+      "file_name": "bin/macosx/el-capitan/contrib/3.5/alphashape3d_1.3.tgz"
+    },
+    {
+      "url": ["https://cran.rstudio.com/bin/macosx/el-capitan/contrib/3.5/dendextend_1.12.0.tgz", "https://metrumresearchgroup.github.io/cran/2019-09-22/bin/macosx/el-capitan/contrib/3.5/dendextend_1.12.0.tgz"],
+      "file_name": "bin/macosx/el-capitan/contrib/3.5/dendextend_1.12.0.tgz"
+    },
+    {
+      "url": ["https://cran.rstudio.com/bin/windows/contrib/3.5/Rmisc_1.5.zip", "https://metrumresearchgroup.github.io/cran/2019-09-22/bin/windows/contrib/3.5/Rmisc_1.5.zip"],
+      "file_name": "bin/windows/contrib/3.5/Rmisc_1.5.zip"
+    }
+  ]
+  
