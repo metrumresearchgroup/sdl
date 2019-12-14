@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"path/filepath"
 
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/afero"
 )
 
@@ -66,7 +67,8 @@ func maybeDownloadAndSave(d fileDl, fpath string, doneCh chan dlResult) {
 	}
 	dirExists, _ := afero.DirExists(fs, filepath.Dir(fpath))
 	if !dirExists {
-		fs.MkdirAll(filepath.Base(fpath), 0755)
+		log.Info("creating dir: " + filepath.Dir(fpath))
+		fs.MkdirAll(filepath.Dir(fpath), 0755)
 	}
 	err = afero.WriteFile(fs, fpath, fileContents, 0777)
 	if err != nil {
