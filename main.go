@@ -71,18 +71,7 @@ func main() {
 
 		}
 	}
-	for _, fp := range cranStructure {
-		err := fs.MkdirAll(filepath.Join(rootDir, fp), 0777)
-		// mkdirall wil return nil if already exists
-		if err != nil {
-			log.WithFields(logrus.Fields{
-				"err":  err,
-				"dir":  rootDir,
-				"cran": fp,
-			}).Fatal("could not create cranlike dir to download files")
 
-		}
-	}
 	sem := make(chan struct{}, 30)
 	done := make(chan dlResult, len(dlResults))
 	// wg := sync.WaitGroup{}

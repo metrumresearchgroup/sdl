@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"path/filepath"
 
 	"github.com/spf13/afero"
 )
@@ -35,7 +36,7 @@ func downloadFileData(URLs []string) ([]byte, string, error) {
 		// getting a correct response, so should probably actually error
 		// rather than trying to keep going
 		if err != nil {
-			return nil, URL, fmt.Errorf("error copying data from response: %w")
+			return nil, URL, fmt.Errorf("error copying data from response: %w", err)
 		}
 		return data.Bytes(), URL, nil
 	}
@@ -62,6 +63,10 @@ func maybeDownloadAndSave(d fileDl, fpath string, doneCh chan dlResult) {
 			Error:              err,
 		}
 		return
+	}
+	dirExists, _ := afero.DirExists(fs, filepath.Dir(fpath))
+	if !dirExists {
+		fs.MkdirAll(filepath.Base(fpath), 0755)
 	}
 	err = afero.WriteFile(fs, fpath, fileContents, 0777)
 	if err != nil {
