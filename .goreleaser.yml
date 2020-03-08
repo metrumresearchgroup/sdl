@@ -9,14 +9,13 @@ before:
 builds:
   - binary: sdl
     goos:
-    - windows
-    - darwin
-    - linux
+      - windows
+      - darwin
+      - linux
     goarch:
-    - amd64
-builds:
-- env:
-  - CGO_ENABLED=0
+      - amd64
+    env:
+      - CGO_ENABLED=0
 archives:
 - replacements:
     darwin: Darwin
